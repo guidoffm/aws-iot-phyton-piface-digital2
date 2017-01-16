@@ -18,6 +18,8 @@ host = "a3mlie25r4i811.iot.eu-west-1.amazonaws.com"
 rootCAPath = "root-CA.crt"
 certificatePath = "garagentor.cert.pem"
 privateKeyPath = "garagentor.private.key"
+send_topic = "garage/inputs"
+receive_topic = "garage/outputs"
 
 missingConfiguration = False
 if not useWebsocket:
@@ -56,9 +58,6 @@ myAWSIoTMQTTClient.configureOfflinePublishQueueing(-1)  # Infinite offline Publi
 myAWSIoTMQTTClient.configureDrainingFrequency(2)  # Draining: 2 Hz
 myAWSIoTMQTTClient.configureConnectDisconnectTimeout(10)  # 10 sec
 myAWSIoTMQTTClient.configureMQTTOperationTimeout(5)  # 5 sec
-
-send_topic = "garage/inputs"
-receive_topic = "garage/outputs"
 
 # Custom MQTT message callback
 def customCallback(client, userdata, message):
