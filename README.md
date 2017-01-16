@@ -15,6 +15,17 @@ To get this running for you:
   - certificatePath 
   - privateKeyPath 
 - You may adjust the name sof the topics used for send and receive
+- Make the py file runable by running `chmod +x garagentor.py`
+- Make the shell script runable by running `chmod +x start_garagentor.sh`
+- Run the Python script
+- Open the AWS IoT console and go to `Test`
+  - In `Subscribe to a topic` section enter `garage/inputs` or your changed topic
+  - Press buttons on the PiFace Digital 2 board
+  - You should see a new message for each button press and each button release
+  - In the `Publish`section enter `garage/outputs` or your changed topic
+  - For the body enter `{"isSet": true, "pin": 0}` and push the `Publish to topic` button.
+  - You should hear one relay switching and one LED should light up
+  - Use `{"isSet": false, "pin": 0}` to switch it off again
 
 ## To run the program as a Linux service
 Create a text file `/etc/systemd/system/garagentor.service` with this contents:
