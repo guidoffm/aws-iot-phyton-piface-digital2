@@ -28,7 +28,7 @@ To get this running for you:
   - Use `{"isSet": false, "pin": 0}` to switch it off again
 
 ## To run the program as a Linux service
-Create a text file `/etc/systemd/system/garagentor.service` with this contents:
+### Create a text file `/etc/systemd/system/garagentor.service` (with sudo or as root) with this contents:
 
 ```
 [Unit]
@@ -43,5 +43,8 @@ RestartSec=3
 [Install]
 WantedBy=multi-user.target
 ```
+### Enable the service (with sudo or as root)
 `systemctl enable garagentor`
+
+### Start the service (with sudo or as root)
 `systemctl start garagentor`
