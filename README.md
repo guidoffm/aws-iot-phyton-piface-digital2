@@ -1,8 +1,7 @@
 # aws-iot-phyton-piface-digital2
 
-```
-cat /etc/systemd/system/garagentor.service
-```
+Create a text file `/etc/systemd/system/garagentor.service` with this contents:
+
 ```
 [Unit]
 Description=garagentor
