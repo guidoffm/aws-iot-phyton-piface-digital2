@@ -27,8 +27,10 @@ To get this running for you:
   - You should hear one relay switching and one LED should light up
   - Use `{"isSet": false, "pin": 0}` to switch it off again
 
-## To run the program as a Linux service
-### Create a text file `/etc/systemd/system/garagentor.service` (with sudo or as root) with this contents:
+## To run the program as a Linux service using sytemd
+### Create a service manifest
+
+Create text file `/etc/systemd/system/garagentor.service` (with sudo or as root) with this contents:
 
 ```
 [Unit]
